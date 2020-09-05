@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class CityRepository implements CrudRepository<City, Integer> {
+public  class CityRepository implements CrudRepository<City, Integer> {
 
   private final EntityManager em;
 
@@ -21,6 +21,8 @@ public class CityRepository implements CrudRepository<City, Integer> {
   public City findById(Integer id) {
     return null;
   }
+
+
 
   @Override
   public City create(City entity) {

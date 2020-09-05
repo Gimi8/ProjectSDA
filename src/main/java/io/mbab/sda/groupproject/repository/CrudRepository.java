@@ -1,5 +1,7 @@
 package io.mbab.sda.groupproject.repository;
 
+import io.mbab.sda.groupproject.entity.City;
+
 import java.util.List;
 
 public interface CrudRepository<T, ID> {
@@ -9,6 +11,8 @@ public interface CrudRepository<T, ID> {
   T findById(ID id);
 
   T create(T entity);
+
+
 
   T update(T entity);
 
