@@ -1,4 +1,4 @@
-package io.mbab.sda.groupproject.config;
+package io.mbab.sda.groupproject2.config;
 
 import org.hibernate.cfg.Environment;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;

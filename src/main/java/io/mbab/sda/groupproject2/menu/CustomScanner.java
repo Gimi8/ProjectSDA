@@ -1,4 +1,4 @@
-package io.mbab.sda.groupproject.menu;
+package io.mbab.sda.groupproject2.menu;
 
 import java.util.Scanner;
 

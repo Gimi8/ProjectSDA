@@ -1,4 +1,6 @@
-package io.mbab.sda.groupproject.repository;
+package io.mbab.sda.groupproject2.repository;
+
+import io.mbab.sda.groupproject2.entity.Album;
 
 import io.mbab.sda.groupproject.entity.City;
 
@@ -16,5 +18,7 @@ public interface CrudRepository<T, ID> {
 
   T update(T entity);
 
-  void delete(ID id);
+    Album create(Album entity);
+
+    void delete(ID id);
 }

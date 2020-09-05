@@ -1,14 +1,15 @@
-package io.mbab.sda.groupproject.menu.action;
+package io.mbab.sda.groupproject2.menu.action;
 
-import io.mbab.sda.groupproject.menu.MenuActionContext;
-import io.mbab.sda.groupproject.repository.CityRepository;
+import io.mbab.sda.groupproject2.menu.MenuActionContext;
+import io.mbab.sda.groupproject2.repository.AlbumRepository;
+import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class ViewCitiesAction implements MenuAction {
 
   private final MenuActionContext ctx;
-  private final CityRepository repository;
+  private final AlbumRepository repository;
 
   @Override
   public void execute() {

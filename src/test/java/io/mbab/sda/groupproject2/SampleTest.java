@@ -1,4 +1,4 @@
-package io.mbab.sda.groupproject;
+package io.mbab.sda.groupproject2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
