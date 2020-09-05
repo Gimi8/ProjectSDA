@@ -9,10 +9,10 @@ public class SampleTest {
     void shouldDoSomething() {
         //given
         int value = 1;
-        int expectedValue = 3;
+        int expectedValue = 7;
 
         //when
-        int actualValue =  value +  2;
+        int actualValue =  value +  3;
 
         //then
         Assertions.assertEquals(expectedValue, actualValue);

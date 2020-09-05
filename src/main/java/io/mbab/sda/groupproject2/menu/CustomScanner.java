@@ -7,6 +7,9 @@ public class CustomScanner {
 
     private final Scanner scanner = new Scanner(System.in);
 
+    public double number(){
+        return scanner.nextDouble();
+    }
     public String nextLine() {
         return scanner.nextLine();
     }

@@ -3,7 +3,7 @@ package io.mbab.sda.groupproject2.menu;
 import io.mbab.sda.groupproject2.menu.action.*;
 import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import io.mbab.sda.groupproject2.repository.CrudRepositoryFactory;
-import lombok.SneakyThrows;
+import io.mbab.sda.groupproject2.repository.SongRepository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,6 @@ public class MenuActionContext {
     return this;
   }
 
-
   public void execute() {
     if (action == null) throw new RuntimeException("Menu action not set");
     action.execute();
@@ -34,7 +33,18 @@ public class MenuActionContext {
         CreateAlbumAction.class,
         new CreateAlbumAction(scanner, this, repositoryFactory.get(AlbumRepository.class)));
     holder.put(
-        ViewCitiesAction.class,
-        new ViewCitiesAction(this, repositoryFactory.get(AlbumRepository.class)));
+        ViewAlbumAction.class,
+        new ViewAlbumAction(this, repositoryFactory.get(AlbumRepository.class)));
+
+    holder.put(MainAction.class, new MainAction(scanner, this));
+    holder.put(
+        CreateSongAction.class,
+        new CreateSongAction(scanner, this, repositoryFactory.get(SongRepository.class)));
+    holder.put(
+        ViewSongAction.class,
+        new ViewSongAction(this, repositoryFactory.get(SongRepository.class)));
+
+    // repositoryFactory.get(SongRepository.class)
+
   }
 }

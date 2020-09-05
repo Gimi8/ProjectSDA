@@ -1,50 +1,49 @@
 package io.mbab.sda.groupproject2.repository;
-
+import io.mbab.sda.groupproject2.entity.Song;
 import io.mbab.sda.groupproject2.entity.Album;
 
 
-import io.mbab.sda.groupproject2.entity.Song;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class AlbumRepository implements CrudRepository < Album , Integer> {
+public class SongRepository implements CrudRepository < Song, Integer> {
 
     private final EntityManager em;
 
     @Override
-    public List<Album> getAll() {
-        return em.createQuery("FROM Album", Album.class)
+    public List<Song> getAll() {
+        return em.createQuery("FROM Song", Song.class)
                 .getResultList();
     }
 
     @Override
-    public Album findById(Integer id) {
+    public Song findById(Integer id) {
         return null;
+
     }
 
     @Override
-    public Album update(Album entity) {
+    public Song update(Song entity) {
         return null;
     }
-
-
-
 
     @Override
     public Album create(Album entity) {
+        return null;
+    }
+
+
+    @Override
+    public Song create(Song entity) {
         em.getTransaction().begin();
         em.persist(entity);
         em.getTransaction().commit();
         return entity;
     }
 
-    @Override
-    public Song create(Song entity) {
-        return null;
-    }
 
 
     @Override
