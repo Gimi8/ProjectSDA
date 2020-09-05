@@ -1,11 +1,8 @@
-package io.mbab.sda.groupproject.menu;
+package io.mbab.sda.groupproject2.menu;
 
-import io.mbab.sda.groupproject.menu.action.CreateCityAction;
-import io.mbab.sda.groupproject.menu.action.MainAction;
-import io.mbab.sda.groupproject.menu.action.MenuAction;
-import io.mbab.sda.groupproject.menu.action.ViewCitiesAction;
-import io.mbab.sda.groupproject.repository.CityRepository;
-import io.mbab.sda.groupproject.repository.CrudRepositoryFactory;
+import io.mbab.sda.groupproject2.menu.action.*;
+import io.mbab.sda.groupproject2.repository.AlbumRepository;
+import io.mbab.sda.groupproject2.repository.CrudRepositoryFactory;
 import lombok.SneakyThrows;
 
 import java.util.HashMap;
@@ -34,10 +31,10 @@ public class MenuActionContext {
   private void initHolder(CustomScanner scanner, CrudRepositoryFactory repositoryFactory) {
     holder.put(MainAction.class, new MainAction(scanner, this));
     holder.put(
-        CreateCityAction.class,
-        new CreateCityAction(scanner, this, repositoryFactory.get(CityRepository.class)));
+        CreateAlbumAction.class,
+        new CreateAlbumAction(scanner, this, repositoryFactory.get(AlbumRepository.class)));
     holder.put(
         ViewCitiesAction.class,
-        new ViewCitiesAction(this, repositoryFactory.get(CityRepository.class)));
+        new ViewCitiesAction(this, repositoryFactory.get(AlbumRepository.class)));
   }
 }
