@@ -24,7 +24,7 @@ public class CreateCityAction implements MenuAction {
 
     var builder = City.builder().name(input);
 
-    System.out.println("Podaj nazwę państwa:");
+    System.out.println("Podaj nazwę panstwa:");
 
     input = scanner.nextLine();
 
