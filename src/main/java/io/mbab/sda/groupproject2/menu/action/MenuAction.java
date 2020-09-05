@@ -1,4 +1,4 @@
-package io.mbab.sda.groupproject.menu.action;
+package io.mbab.sda.groupproject2.menu.action;
 
 public interface MenuAction {
 

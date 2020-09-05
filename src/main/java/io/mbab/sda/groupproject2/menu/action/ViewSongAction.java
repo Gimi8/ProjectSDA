@@ -1,18 +1,17 @@
-package io.mbab.sda.groupproject.menu.action;
+package io.mbab.sda.groupproject2.menu.action;
 
-import io.mbab.sda.groupproject.menu.MenuActionContext;
-import io.mbab.sda.groupproject.repository.SongRepository;
+
+
+import io.mbab.sda.groupproject2.menu.MenuActionContext;
+import io.mbab.sda.groupproject2.repository.AlbumRepository;
+import io.mbab.sda.groupproject2.repository.SongRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-
-public class VievSongsAction implements MenuAction {
+public  class ViewSongAction implements MenuAction {
 
     private final MenuActionContext ctx;
     private final SongRepository repository;
-
-
-
 
     @Override
     public void execute() {
@@ -29,3 +28,4 @@ public class VievSongsAction implements MenuAction {
         ctx.use(MainAction.class).execute();
     }
 }
+

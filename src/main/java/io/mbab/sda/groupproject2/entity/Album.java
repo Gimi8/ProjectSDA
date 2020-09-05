@@ -1,4 +1,4 @@
-package io.mbab.sda.groupproject.entity;
+package io.mbab.sda.groupproject2.entity;
 
 import lombok.*;
 
@@ -10,26 +10,18 @@ import javax.persistence.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Song {
-
+public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(length = 64, nullable = false)
-    private String title;
+    private String name;
 
     @Column(length = 64, nullable = false)
-    private String album;
-
-    @Column
-    private int lenght;
-
-    @Column (length = 64, nullable = true)
-    private String artist;
-
-
+    private String artistName ;
 
 
 }
+

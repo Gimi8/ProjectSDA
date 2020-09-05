@@ -1,4 +1,4 @@
-package io.mbab.sda.groupproject.repository;
+package io.mbab.sda.groupproject2.repository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
