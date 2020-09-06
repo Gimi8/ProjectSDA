@@ -45,6 +45,9 @@ public class MainAction implements MenuAction {
             return;
         }
 
+
+        System.out.println("wprowadzono nieprawidlowa wartosc");
+        execute();
     }
 
 
