@@ -10,8 +10,6 @@ public interface CrudRepository<T, ID> {
 
   Optional<T> findById(ID id);
 
- T findNameAlbum(T entity);
-
   T create(T entity);
 
   T update(T entity);

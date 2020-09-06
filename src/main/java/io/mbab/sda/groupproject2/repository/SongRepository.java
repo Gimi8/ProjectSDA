@@ -24,11 +24,6 @@ public class SongRepository implements CrudRepository<Song, Integer> {
   }
 
   @Override
-  public Song findNameAlbum(Song entity) {
-    return null;
-  }
-
-  @Override
   public Song update(Song entity) {
     return null;
   }
@@ -43,4 +38,6 @@ public class SongRepository implements CrudRepository<Song, Integer> {
 
   @Override
   public void delete(Integer o) {}
+
+
 }

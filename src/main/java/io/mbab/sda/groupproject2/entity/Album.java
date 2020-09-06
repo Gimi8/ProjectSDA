@@ -3,7 +3,6 @@ package io.mbab.sda.groupproject2.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -14,16 +13,23 @@ import java.util.Set;
 @AllArgsConstructor
 public class Album {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-  @Column(length = 64, nullable = false)
-  private String name;
 
-  @Column(length = 64, nullable = false)
-  private String artistName;
+    @Column(length = 64, nullable = false)
+    private String name;
 
-//  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "song")
-//  private Set<Song> songs;
+
+    @Column(length = 64, nullable = false)
+    private String artistName ;
+
+    @OneToMany
+    @JoinTable(
+            name = "id",
+            joinColumns = @JoinColumn(name = "title")
+            )
+    private Set<Song> songs;
 }
+
