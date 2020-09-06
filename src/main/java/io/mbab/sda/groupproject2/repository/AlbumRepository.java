@@ -5,36 +5,50 @@ import io.mbab.sda.groupproject2.entity.Album;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Id;
+import javax.persistence.NoResultException;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 public class AlbumRepository implements CrudRepository<Album, Integer> {
 
-  private final EntityManager em;
+    private final EntityManager em;
 
-  @Override
-  public List<Album> getAll() {
-    return em.createQuery("FROM Album", Album.class).getResultList();
-  }
+    @Override
+    public List<Album> getAll() {
+        return em.createQuery("FROM Album", Album.class).getResultList();
+    }
 
-  @Override
-  public Album findById(Integer id) {
-    return null;
-  }
+    @Override
+    public Optional<Album> findById(Integer id) {
+        String jpql = "FROM Album e WHERE e.id = :id";
 
-  @Override
-  public Album update(Album entity) {
-    return null;
-  }
+        try{
+          var album = em.createQuery(jpql, Album.class).setParameter("id", id).getSingleResult();
+          return Optional.of(album);
+        }catch(NoResultException e){
+            return Optional.empty();
+        }
 
-  @Override
-  public Album create(Album entity) {
-    em.getTransaction().begin();
-    em.persist(entity);
-    em.getTransaction().commit();
-    return entity;
-  }
+    }
 
-  @Override
-  public void delete(Integer o) {}
+    @Override
+    public Album update(Album entity) {
+        return null;
+    }
+
+    @Override
+    public Album create(Album entity) {
+        em.getTransaction().begin();
+        em.persist(entity);
+        em.getTransaction().commit();
+        return entity;
+    }
+
+    @Override
+    public void delete(Integer o) {
+    }
+
+
 }
