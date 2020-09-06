@@ -33,7 +33,7 @@ public class CreateSongAction implements MenuAction {
         builder.artist(input).build();
 
 
-        addAlbum(builder);
+
 
 
         System.out.println("Podaj długość utworu ");
@@ -42,6 +42,7 @@ public class CreateSongAction implements MenuAction {
         var song = builder.lenght(input2).build();
 
         if (pressedZero(input)) return;
+        addAlbum(builder);
         songRepository.create(song);
 
         ctx.use(MainAction.class).execute();
