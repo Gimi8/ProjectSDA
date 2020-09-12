@@ -41,9 +41,10 @@ public class SongRepository implements CrudRepository<Song, Integer> {
   public void delete(Integer o) {}
 
   @Override
-  public Optional<Album> FindAlbumByName(String name) {
-    return Optional.empty();
+  public List<Album> FindAlbumByName(String name) {
+    return null;
   }
+
 
   @Override
   public Optional<Album> FindAlbumByArtistName(String name) {

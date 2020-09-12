@@ -21,10 +21,11 @@ public class AlbumRepository implements CrudRepository<Album, Integer> {
 
     @Override
     public Optional<Album> findById(Integer id) {
-        String jpql = "FROM Album e WHERE e.id = :id";
+//        String jpql = "FROM Album e WHERE e.id = :id";
 
         try {
-            var album = em.createQuery(jpql, Album.class).setParameter("id", id).getSingleResult();
+//            var album = em.createQuery(jpql, Album.class).setParameter("id", id).getSingleResult();
+            var album = em.find(Album.class, id);
             return Optional.of(album);
         } catch (NoResultException e) {
             return Optional.empty();
@@ -51,14 +52,12 @@ public class AlbumRepository implements CrudRepository<Album, Integer> {
     }
 
     @Override
-    public Optional<Album> FindAlbumByName(String name) {
+    public List<Album> FindAlbumByName(String name) {
         String jpql = "FROM Album e WHERE e.name = :name";
-        try {
-            var album = em.createQuery(jpql, Album.class).setParameter("name", name).getSingleResult();
-            return Optional.of(album);
-        } catch (NoResultException e) {
-            return Optional.empty();
-        }
+
+           return  em.createQuery(jpql, Album.class).setParameter("name", name).getResultList();
+
+
     }
 
 
@@ -66,7 +65,7 @@ public class AlbumRepository implements CrudRepository<Album, Integer> {
     public Optional<Album> FindAlbumByArtistName(String artistName) {
         String jpql = "FROM Album e WHERE e.artistName = :artistName";
         try {
-            var album = em.createQuery(jpql, Album.class).setParameter("artistName",artistName ).getSingleResult();
+            var album = em.createQuery(jpql, Album.class).setParameter("artistName", artistName).getSingleResult();
             return Optional.of(album);
         } catch (NoResultException e) {
             return Optional.empty();

@@ -26,11 +26,7 @@ public class Album {
     @Column(length = 64, nullable = false)
     private String artistName ;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "id",
-            joinColumns = @JoinColumn(name = "title")
-            )
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "album")
     private Set<Song> songs;
 
 

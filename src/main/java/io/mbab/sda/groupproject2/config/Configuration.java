@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 
 public final class Configuration {
   private static final String DB_URL =
-      "jdbc:mysql://localhost:3306/group_project3?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true";
+      "jdbc:mysql://localhost:3306/group_project2?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true";
   private static final String DB_USER_NAME = "root";
   private static final String DB_PASSWORD = "Asteroida1";
 

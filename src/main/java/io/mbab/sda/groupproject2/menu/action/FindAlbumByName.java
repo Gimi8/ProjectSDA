@@ -4,6 +4,7 @@ import io.mbab.sda.groupproject2.menu.CustomScanner;
 import io.mbab.sda.groupproject2.menu.MenuActionContext;
 import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
+import org.w3c.dom.ls.LSOutput;
 
 @RequiredArgsConstructor
 public class FindAlbumByName implements MenuAction {
@@ -16,9 +17,9 @@ public class FindAlbumByName implements MenuAction {
         System.out.println("Podaj nazwe albumu : ");
 
         String name = scanner.nextLine();
-        repository
-                .FindAlbumByName(name)
-                .ifPresentOrElse(System.out::println, () -> System.out.println("Nie znaleziono"));
+        System.out.println(repository
+                .FindAlbumByName(name));
+
         ctx.use(MainAction.class).execute();
 
     }
