@@ -8,7 +8,7 @@ import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class CreateAlbumAction implements MenuAction {
+public class CreateAlbumAction implements MenuAction  {
 
     private final CustomScanner scanner;
     private final MenuActionContext ctx;

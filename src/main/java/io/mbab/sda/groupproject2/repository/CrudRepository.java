@@ -1,6 +1,8 @@
 package io.mbab.sda.groupproject2.repository;
 
 
+import io.mbab.sda.groupproject2.entity.Album;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -10,11 +12,15 @@ public interface CrudRepository<T, ID> {
 
   Optional<T> findById(ID id);
 
- T findNameAlbum(T entity);
-
   T create(T entity);
 
   T update(T entity);
 
   void delete(ID id);
+
+
+
+  List<Album> FindAlbumByName(String name);
+
+  Optional<Album> FindAlbumByArtistName(String name);
 }

@@ -1,5 +1,6 @@
 package io.mbab.sda.groupproject2.repository;
 
+import io.mbab.sda.groupproject2.entity.Album;
 import io.mbab.sda.groupproject2.entity.Song;
 
 import lombok.RequiredArgsConstructor;
@@ -24,11 +25,6 @@ public class SongRepository implements CrudRepository<Song, Integer> {
   }
 
   @Override
-  public Song findNameAlbum(Song entity) {
-    return null;
-  }
-
-  @Override
   public Song update(Song entity) {
     return null;
   }
@@ -43,4 +39,17 @@ public class SongRepository implements CrudRepository<Song, Integer> {
 
   @Override
   public void delete(Integer o) {}
+
+  @Override
+  public List<Album> FindAlbumByName(String name) {
+    return null;
+  }
+
+
+  @Override
+  public Optional<Album> FindAlbumByArtistName(String name) {
+    return Optional.empty();
+  }
+
+
 }

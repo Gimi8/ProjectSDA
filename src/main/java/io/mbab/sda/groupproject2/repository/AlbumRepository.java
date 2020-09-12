@@ -11,46 +11,64 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class AlbumRepository implements CrudRepository<Album, Integer> {
-  private final EntityManager em;
-  @Override
-  public List<Album> getAll() {
-    return em.createQuery("FROM Album", Album.class).getResultList();
-  }
-  @Override
-  public Optional<Album> findById(Integer id) {
-    String jpql = "FROM Album e WHERE e.id = :id";
-    try {
-      var album = em.createQuery(jpql, Album.class).setParameter("id", id).getSingleResult();
-      return Optional.of(album);
-    } catch (NoResultException e) {
-      return Optional.empty();
+
+    private final EntityManager em;
+
+    @Override
+    public List<Album> getAll() {
+        return em.createQuery("FROM Album", Album.class).getResultList();
     }
-  }
 
-  @Override
-  public Album findNameAlbum(Album name) {
-    return null;
-  }
+    @Override
+    public Optional<Album> findById(Integer id) {
+//        String jpql = "FROM Album e WHERE e.id = :id";
 
-  @Override
-  public Album update(Album entity) {
-    return null;
-  }
-  @Override
-  public Album create(Album entity) {
-    em.getTransaction().begin();
-    em.persist(entity);
-    em.getTransaction().commit();
-    return entity;
-  }
-  @Override
-  public void delete(Integer o) {
-  }
+        try {
+//            var album = em.createQuery(jpql, Album.class).setParameter("id", id).getSingleResult();
+            var album = em.find(Album.class, id);
+            return Optional.of(album);
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
+
+    }
 
 
-  public List<Album> findNameAlbum(String name) {
-    String jpql = "FROM Album e WHERE LOWER(e.name) LIKE   :name";
-    name = "%" + name.toLowerCase() + "%";
-    return em.createQuery(jpql, Album.class).setParameter("name", name).getResultList();
-  }
+    @Override
+    public Album update(Album entity) {
+        return null;
+    }
+
+    @Override
+    public Album create(Album entity) {
+        em.getTransaction().begin();
+        em.persist(entity);
+        em.getTransaction().commit();
+        return entity;
+    }
+
+    @Override
+    public void delete(Integer o) {
+    }
+
+    @Override
+    public List<Album> FindAlbumByName(String name) {
+        String jpql = "FROM Album e WHERE e.name = :name";
+
+           return  em.createQuery(jpql, Album.class).setParameter("name", name).getResultList();
+
+
+    }
+
+
+    @Override
+    public Optional<Album> FindAlbumByArtistName(String artistName) {
+        String jpql = "FROM Album e WHERE e.artistName = :artistName";
+        try {
+            var album = em.createQuery(jpql, Album.class).setParameter("artistName", artistName).getSingleResult();
+            return Optional.of(album);
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
+    }
 }

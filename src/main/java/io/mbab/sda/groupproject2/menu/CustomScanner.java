@@ -6,13 +6,15 @@ import java.util.Scanner;
 public class CustomScanner {
 
     private final Scanner scanner = new Scanner(System.in);
-    public int nextInt(){
-        return scanner.nextInt();
-    }
+
+
     public double nextDouble(){
         return scanner.nextDouble();
     }
     public String nextLine() {
         return scanner.nextLine();
+    }
+
+    public Integer nextInt() { return  scanner.nextInt();
     }
 }
