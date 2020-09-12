@@ -1,27 +1,24 @@
 package io.mbab.sda.groupproject2.menu.action;
 
-        import io.mbab.sda.groupproject2.menu.MenuActionContext;
-        import io.mbab.sda.groupproject2.repository.AlbumRepository;
-        import io.mbab.sda.groupproject2.repository.AlbumRepository;
-        import lombok.RequiredArgsConstructor;
+import io.mbab.sda.groupproject2.menu.CustomScanner;
+import io.mbab.sda.groupproject2.menu.MenuActionContext;
+import io.mbab.sda.groupproject2.repository.AlbumRepository;
+import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class ViewAlbumAction implements MenuAction {
-
   private final MenuActionContext ctx;
   private final AlbumRepository repository;
+  private final CustomScanner scanner;
 
   @Override
   public void execute() {
-    var albums = repository.getAll();
+    System.out.println("Podaj id albumu : ");
+    int albumId = scanner.nextInt();
 
-    if (albums.isEmpty()) {
-      System.out.println("Brak danych do wyświetlenia");
-    } else {
-      System.out.println("\n");
-      albums.forEach(System.out::println);
-      System.out.println("\n");
-    }
+    repository
+        .findById(albumId)
+        .ifPresentOrElse(System.out::println, () -> System.out.println("Nie znaleziono"));
 
     ctx.use(MainAction.class).execute();
   }
