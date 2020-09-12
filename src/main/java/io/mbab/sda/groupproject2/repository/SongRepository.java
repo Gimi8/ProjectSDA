@@ -1,12 +1,12 @@
 package io.mbab.sda.groupproject2.repository;
 
 import io.mbab.sda.groupproject2.entity.Song;
-import io.mbab.sda.groupproject2.entity.Album;
 
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 public class SongRepository implements CrudRepository<Song, Integer> {
@@ -19,7 +19,12 @@ public class SongRepository implements CrudRepository<Song, Integer> {
   }
 
   @Override
-  public Song findById(Integer id) {
+  public Optional<Song> findById(Integer id) {
+    return null;
+  }
+
+  @Override
+  public Song findNameAlbum(Song entity) {
     return null;
   }
 

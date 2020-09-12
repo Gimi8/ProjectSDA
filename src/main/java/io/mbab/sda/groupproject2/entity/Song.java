@@ -24,12 +24,12 @@ public class Song {
   private String artist;
 
   @Column(length = 64, nullable = true)
-  private double  lenght;
+  private double lenght;
 
   @Column(length = 64, nullable = false)
   private String album;
 
-
-
-
+//  @ManyToOne
+//  @JoinColumn(name = "album_id")
+//  private Song song;
 }

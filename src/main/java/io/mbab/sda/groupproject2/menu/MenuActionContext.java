@@ -33,8 +33,8 @@ public class MenuActionContext {
         CreateAlbumAction.class,
         new CreateAlbumAction(scanner, this, repositoryFactory.get(AlbumRepository.class)));
     holder.put(
-        ViewAlbumAction.class,
-        new ViewAlbumAction(this, repositoryFactory.get(AlbumRepository.class)));
+        ViewAlbumsAction.class,
+        new ViewAlbumsAction(this, repositoryFactory.get(AlbumRepository.class)));
 
     holder.put(MainAction.class, new MainAction(scanner, this));
     holder.put(
@@ -44,7 +44,12 @@ public class MenuActionContext {
         ViewSongAction.class,
         new ViewSongAction(this, repositoryFactory.get(SongRepository.class)));
 
-    // repositoryFactory.get(SongRepository.class)
+    holder.put(MainAction.class, new MainAction(scanner, this));
+    holder.put(
+            ViewAlbumAction.class,
+            new ViewAlbumAction(this, repositoryFactory.get(AlbumRepository.class),scanner ));
+
+
 
   }
 }

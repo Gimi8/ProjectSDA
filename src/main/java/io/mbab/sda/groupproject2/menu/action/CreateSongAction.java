@@ -1,12 +1,11 @@
 package io.mbab.sda.groupproject2.menu.action;
 
-import io.mbab.sda.groupproject2.entity.Album;
 import io.mbab.sda.groupproject2.entity.Song;
 import io.mbab.sda.groupproject2.menu.CustomScanner;
 import io.mbab.sda.groupproject2.menu.MenuActionContext;
-import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import io.mbab.sda.groupproject2.repository.SongRepository;
 import lombok.RequiredArgsConstructor;
+
 
 @RequiredArgsConstructor
 public class CreateSongAction implements MenuAction {
@@ -42,7 +41,7 @@ public class CreateSongAction implements MenuAction {
     var album = builder.album(input).build();
     System.out.println("Podaj długość utworu ");
 
-    var input2 = scanner.number();
+    var input2 = scanner.nextDouble();
     var song = builder.lenght(input2).build();
 
     if (pressedZero(input)) return;

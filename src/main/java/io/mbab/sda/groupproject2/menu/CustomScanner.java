@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class CustomScanner {
 
     private final Scanner scanner = new Scanner(System.in);
-
-    public double number(){
+    public int nextInt(){
+        return scanner.nextInt();
+    }
+    public double nextDouble(){
         return scanner.nextDouble();
     }
     public String nextLine() {
