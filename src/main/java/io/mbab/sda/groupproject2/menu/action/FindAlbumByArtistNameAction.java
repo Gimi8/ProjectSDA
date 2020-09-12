@@ -6,7 +6,7 @@ import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class FindAlbumByArtistName implements MenuAction{
+public class FindAlbumByArtistNameAction implements MenuAction{
 
     private final MenuActionContext ctx;
     private final AlbumRepository repository;
