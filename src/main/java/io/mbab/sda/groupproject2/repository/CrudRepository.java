@@ -20,7 +20,5 @@ public interface CrudRepository<T, ID> {
 
 
 
-  List<Album> FindAlbumByName(String name);
 
-  Optional<Album> FindAlbumByArtistName(String name);
 }

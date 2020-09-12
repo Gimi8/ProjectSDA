@@ -6,25 +6,28 @@ import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class FindAlbumByArtistName implements MenuAction{
-
+public class FindAlbumByNameAction implements MenuAction {
     private final MenuActionContext ctx;
     private final AlbumRepository repository;
     private final CustomScanner scanner;
 
-
     @Override
     public void execute() {
-        System.out.println("Podaj nazwe wykonawcy : ");
+        System.out.println("Podaj nazwe albumu : ");
 
-        String artistName = scanner.nextLine();
-        repository
-                .FindAlbumByArtistName(artistName)
-                .ifPresentOrElse(System.out::println, () -> System.out.println("Nie znaleziono"));
+        String name = scanner.nextLine();
+        System.out.println(repository
+                .findAlbumByName(name));
+
         ctx.use(MainAction.class).execute();
 
     }
 
 
-}
 
+
+
+
+
+
+}
