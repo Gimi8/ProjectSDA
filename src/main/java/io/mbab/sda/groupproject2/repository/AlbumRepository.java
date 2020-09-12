@@ -52,7 +52,7 @@ public class AlbumRepository implements CrudRepository<Album, Integer> {
     }
 
     @Override
-    public List<Album> FindAlbumByName(String name) {
+    public List<Album> findAlbumByName(String name) {
         String jpql = "FROM Album e WHERE e.name = :name";
 
            return  em.createQuery(jpql, Album.class).setParameter("name", name).getResultList();
@@ -62,7 +62,7 @@ public class AlbumRepository implements CrudRepository<Album, Integer> {
 
 
     @Override
-    public Optional<Album> FindAlbumByArtistName(String artistName) {
+    public Optional<Album> findAlbumByArtistName(String artistName) {
         String jpql = "FROM Album e WHERE e.artistName = :artistName";
         try {
             var album = em.createQuery(jpql, Album.class).setParameter("artistName", artistName).getSingleResult();

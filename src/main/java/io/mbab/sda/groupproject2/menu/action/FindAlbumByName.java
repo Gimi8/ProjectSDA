@@ -4,7 +4,6 @@ import io.mbab.sda.groupproject2.menu.CustomScanner;
 import io.mbab.sda.groupproject2.menu.MenuActionContext;
 import io.mbab.sda.groupproject2.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
-import org.w3c.dom.ls.LSOutput;
 
 @RequiredArgsConstructor
 public class FindAlbumByName implements MenuAction {
@@ -18,7 +17,7 @@ public class FindAlbumByName implements MenuAction {
 
         String name = scanner.nextLine();
         System.out.println(repository
-                .FindAlbumByName(name));
+                .findAlbumByName(name));
 
         ctx.use(MainAction.class).execute();
 

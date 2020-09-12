@@ -19,7 +19,7 @@ public class FindAlbumByArtistName implements MenuAction{
 
         String artistName = scanner.nextLine();
         repository
-                .FindAlbumByArtistName(artistName)
+                .findAlbumByArtistName(artistName)
                 .ifPresentOrElse(System.out::println, () -> System.out.println("Nie znaleziono"));
         ctx.use(MainAction.class).execute();
 
