@@ -51,7 +51,7 @@ public class AlbumRepository implements CrudRepository<Album, Integer> {
     public void delete(Integer o) {
     }
 
-    @Override
+  
     public List<Album> findAlbumByName(String name) {
         String jpql = "FROM Album e WHERE e.name = :name";
 
@@ -61,7 +61,7 @@ public class AlbumRepository implements CrudRepository<Album, Integer> {
     }
 
 
-    @Override
+
     public Optional<Album> findAlbumByArtistName(String artistName) {
         String jpql = "FROM Album e WHERE e.artistName = :artistName";
         try {
