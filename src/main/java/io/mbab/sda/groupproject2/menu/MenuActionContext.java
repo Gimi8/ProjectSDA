@@ -50,11 +50,11 @@ public class MenuActionContext {
                 ViewAlbumAction.class,
                 new ViewAlbumAction(this, repositoryFactory.get(AlbumRepository.class), scanner));
         holder.put(
-                FindAlbumByName.class,
-                new FindAlbumByName(this, repositoryFactory.get(AlbumRepository.class), scanner));
+                FindAlbumByNameAction.class,
+                new FindAlbumByNameAction(this, repositoryFactory.get(AlbumRepository.class), scanner));
         holder.put(
-                FindAlbumByArtistName.class,
-                new FindAlbumByArtistName(this, repositoryFactory.get(AlbumRepository.class), scanner));
+                FindAlbumByArtistNameAction.class,
+                new FindAlbumByArtistNameAction(this, repositoryFactory.get(AlbumRepository.class), scanner));
 
 
     }

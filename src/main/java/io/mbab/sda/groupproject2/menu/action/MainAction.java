@@ -50,10 +50,10 @@ public class MainAction implements MenuAction {
             ctx.use(ViewAlbumAction.class).execute();
         }
         if (input.equals("6")) {
-            ctx.use(FindAlbumByName.class).execute();
+            ctx.use(FindAlbumByNameAction.class).execute();
 
         }if (input.equals("7")) {
-            ctx.use(FindAlbumByArtistName.class).execute();
+            ctx.use(FindAlbumByArtistNameAction.class).execute();
         }
 
 
