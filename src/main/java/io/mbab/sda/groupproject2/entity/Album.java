@@ -3,6 +3,7 @@ package io.mbab.sda.groupproject2.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -25,11 +26,14 @@ public class Album {
     @Column(length = 64, nullable = false)
     private String artistName ;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "id",
             joinColumns = @JoinColumn(name = "title")
             )
     private Set<Song> songs;
+
+
+
 }
 
