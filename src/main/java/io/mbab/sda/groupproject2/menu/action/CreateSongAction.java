@@ -6,7 +6,6 @@ import io.mbab.sda.groupproject2.menu.MenuActionContext;
 import io.mbab.sda.groupproject2.repository.SongRepository;
 import lombok.RequiredArgsConstructor;
 
-
 @RequiredArgsConstructor
 public class CreateSongAction implements MenuAction {
 
@@ -31,18 +30,15 @@ public class CreateSongAction implements MenuAction {
 
     var builder2 = builder.artist(input).build();
 
-
-
     System.out.println("Podaj nazwę albumu:");
 
     input = scanner.nextLine();
 
-
     var album = builder.album(input).build();
     System.out.println("Podaj długość utworu ");
 
-    var input2 = scanner.nextDouble();
-    var song = builder.lenght(input2).build();
+    double length = scanner.nextDouble();
+    var song = builder.lenght(length).build();
 
     if (pressedZero(input)) return;
     repository.create(song);

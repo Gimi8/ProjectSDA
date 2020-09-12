@@ -14,11 +14,11 @@ public class ViewAlbumAction implements MenuAction {
   @Override
   public void execute() {
     System.out.println("Podaj id albumu : ");
-    var input2 = scanner.nextInt();
+    int albumId = scanner.nextInt();
 
     repository
-        .findById(input2)
-        .ifPresentOrElse( System.out::println, () -> System.out.println("Nie znaleziono"));
+        .findById(albumId)
+        .ifPresentOrElse(System.out::println, () -> System.out.println("Nie znaleziono"));
 
     ctx.use(MainAction.class).execute();
   }
